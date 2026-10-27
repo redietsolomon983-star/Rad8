@@ -2135,3 +2135,54 @@ a:focus-visible {
     transition: none !important;
   }
 }
+/* ===== Day 5 polish ===== */
+
+/* Skip link: hidden until focused with the keyboard */
+.skip-link {
+  position: absolute;
+  top: -60px;
+  left: 1rem;
+  background-color: var(--accent);
+  color: #ffffff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0 0 8px 8px;
+  font-weight: 600;
+  z-index: 200;
+  transition: top 0.25s;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Text selection color */
+::selection {
+  background-color: var(--accent);
+  color: #ffffff;
+}
+
+/* Print styles: clean page if someone prints or saves as PDF */
+@media print {
+  .header,
+  .back-to-top,
+  .shape,
+  .contact-form,
+  .skip-link {
+    display: none !important;
+  }
+
+  body {
+    background: #ffffff;
+    color: #000000;
+  }
+
+  .section {
+    padding: 1.5rem 0;
+  }
+
+  .project-card {
+    box-shadow: none;
+    border: 1px solid #cccccc;
+    break-inside: avoid;
+  }
+}
