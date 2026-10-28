@@ -1,243 +1,4 @@
 /* ===== Reset & Variables ===== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-:root {
-  --bg: #ede9fe;            /* light purple background */
-  --bg-light: #f5f3ff;      /* header and footer */
-  --text: #2e1065;          /* dark purple text */
-  --text-muted: #5b4b8a;
-  --accent: #7c3aed;        /* main purple */
-  --accent-soft: #c4b5fd;
-  --max-width: 1100px;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: "Segoe UI", Arial, sans-serif;
-  background-color: var(--bg);
-  color: var(--text);
-  line-height: 1.6;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-ul {
-  list-style: none;
-}
-
-/* Remove the outline on mouse click, keep it for keyboard users */
-a:focus {
-  outline: none;
-}
-
-a:focus-visible {
-  outline: 2px dashed var(--accent);
-  outline-offset: 4px;
-  border-radius: 4px;
-}
-
-/* ===== Header / Navigation ===== */
-.header {
-  background-color: var(--bg-light);
-  box-shadow: 0 2px 12px rgba(124, 58, 237, 0.15);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  animation: slideDown 0.6s ease-out;
-}
-
-.nav {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 1rem 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--accent);
-}
-
-.nav-links {
-  display: flex;
-  gap: 1.5rem;
-}
-
-.nav-links a {
-  color: var(--text-muted);
-  position: relative;
-  padding-bottom: 4px;
-  transition: color 0.3s;
-}
-
-/* Animated underline on hover */
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 2px;
-  background-color: var(--accent);
-  transition: width 0.3s ease;
-}
-
-.nav-links a:hover {
-  color: var(--accent);
-}
-
-.nav-links a:hover::after {
-  width: 100%;
-}
-
-/* ===== Hero Section ===== */
-.hero {
-  position: relative;
-  overflow: hidden;
-  min-height: 80vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 2rem 1.5rem;
-}
-
-.hero > *:not(.shape) {
-  position: relative;
-  z-index: 1;
-}
-
-.hero-greeting {
-  color: var(--accent);
-  font-size: 1.1rem;
-  animation: fadeInUp 0.8s ease-out both;
-}
-
-.hero h1 {
-  font-size: 3.5rem;
-  margin: 0.5rem 0;
-  animation: fadeInUp 0.8s ease-out 0.2s both;
-}
-
-.hero-role {
-  color: var(--text-muted);
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
-  animation: fadeInUp 0.8s ease-out 0.4s both;
-}
-
-.btn {
-  display: inline-block;
-  background-color: var(--accent);
-  color: #ffffff;
-  padding: 0.8rem 2rem;
-  border-radius: 6px;
-  font-weight: 600;
-  box-shadow: 0 6px 16px rgba(124, 58, 237, 0.35);
-  transition: transform 0.2s, background-color 0.2s;
-  animation:
-    fadeInUp 0.8s ease-out 0.6s both,
-    pulse 2.5s ease-in-out 1.6s infinite;
-}
-
-.btn:hover {
-  transform: translateY(-3px);
-  background-color: #6d28d9;
-}
-
-/* ===== Floating background shapes ===== */
-.shape {
-  position: absolute;
-  border-radius: 50%;
-  background-color: var(--accent-soft);
-  opacity: 0.55;
-  z-index: 0;
-}
-
-.shape-1 {
-  width: 220px;
-  height: 220px;
-  top: 8%;
-  left: 8%;
-  animation: float 7s ease-in-out infinite;
-}
-
-.shape-2 {
-  width: 150px;
-  height: 150px;
-  bottom: 10%;
-  right: 10%;
-  animation: float 9s ease-in-out infinite reverse;
-}
-
-/* ===== Footer ===== */
-.footer {
-  text-align: center;
-  padding: 1.5rem;
-  color: var(--text-muted);
-  background-color: var(--bg-light);
-}
-
-/* ===== Animations ===== */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideDown {
-  from {
-    transform: translateY(-100%);
-  }
-  to {
-    transform: translateY(0);
-  }
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0) scale(1);
-  }
-  50% {
-    transform: translateY(-25px) scale(1.05);
-  }
-}
-
-@keyframes pulse {
-  0%, 100% {
-    box-shadow: 0 6px 16px rgba(124, 58, 237, 0.35);
-  }
-  50% {
-    box-shadow: 0 6px 28px rgba(124, 58, 237, 0.65);
-  }
-}
-
-/* Respect users who prefer less motion */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation: none !important;
-    transition: none !important;
-  }
-}
 /* ===== Reset & Variables ===== */
 * {
   margin: 0;
@@ -258,7 +19,7 @@ a:focus-visible {
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 70px; /* so the sticky header doesn't cover section titles */
+  scroll-padding-top: 70px;
 }
 
 body {
@@ -286,6 +47,30 @@ a:focus-visible {
   outline: 2px dashed var(--accent);
   outline-offset: 4px;
   border-radius: 4px;
+}
+
+/* Text selection color */
+::selection {
+  background-color: var(--accent);
+  color: #ffffff;
+}
+
+/* Skip link: hidden until focused with the keyboard */
+.skip-link {
+  position: absolute;
+  top: -60px;
+  left: 1rem;
+  background-color: var(--accent);
+  color: #ffffff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0 0 8px 8px;
+  font-weight: 600;
+  z-index: 200;
+  transition: top 0.25s;
+}
+
+.skip-link:focus {
+  top: 0;
 }
 
 /* ===== Header / Navigation ===== */
@@ -325,7 +110,6 @@ a:focus-visible {
   transition: color 0.3s;
 }
 
-/* Animated underline on hover */
 .nav-links a::after {
   content: "";
   position: absolute;
@@ -343,6 +127,58 @@ a:focus-visible {
 
 .nav-links a:hover::after {
   width: 100%;
+}
+
+/* ===== Hamburger button (hidden on desktop) ===== */
+.menu-toggle {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.menu-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 42px;
+  height: 42px;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.25s;
+}
+
+.menu-btn:hover {
+  background-color: var(--bg);
+}
+
+.menu-btn span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: var(--accent);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Keyboard focus on the hidden checkbox shows on the button */
+.menu-toggle:focus-visible + .menu-btn {
+  outline: 2px dashed var(--accent);
+  outline-offset: 3px;
+}
+
+/* Turn the three lines into an X when open */
+.menu-toggle:checked + .menu-btn span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle:checked + .menu-btn span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle:checked + .menu-btn span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
 }
 
 /* ===== Hero Section ===== */
@@ -448,7 +284,6 @@ a:focus-visible {
   padding-bottom: 1rem;
 }
 
-/* Small purple line under each section title */
 .section-title::after {
   content: "";
   position: absolute;
@@ -494,7 +329,6 @@ a:focus-visible {
   transform: rotate(-4deg) scale(1.04);
 }
 
-/* If you use a real photo with <img class="avatar-img">, this styles it */
 .avatar-img {
   width: 240px;
   height: 240px;
@@ -595,1100 +429,102 @@ a:focus-visible {
   transform: translateY(-3px);
 }
 
-/* ===== Footer ===== */
-.footer {
-  text-align: center;
-  padding: 1.5rem;
-  color: var(--text-muted);
-  background-color: var(--bg-light);
+/* ===== Experience & Education (timeline) ===== */
+.timeline-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
 }
 
-/* ===== Animations ===== */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideDown {
-  from {
-    transform: translateY(-100%);
-  }
-  to {
-    transform: translateY(0);
-  }
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0) scale(1);
-  }
-  50% {
-    transform: translateY(-25px) scale(1.05);
-  }
-}
-
-@keyframes pulse {
-  0%, 100% {
-    box-shadow: 0 6px 16px rgba(124, 58, 237, 0.35);
-  }
-  50% {
-    box-shadow: 0 6px 28px rgba(124, 58, 237, 0.65);
-  }
-}
-
-@keyframes growBar {
-  from { width: 0; }
-  to   { width: var(--level); }
-}
-
-/* ===== Scroll animations (pure CSS) =====
-   These run as you scroll down to each section.
-   Works in Chrome, Edge and newer browsers. In other browsers,
-   everything simply shows normally with no animation. */
-@supports (animation-timeline: view()) {
-  .section-title,
-  .about-image,
-  .about-text,
-  .tags {
-    animation: fadeInUp linear both;
-    animation-timeline: view();
-    animation-range: entry 0% entry 60%;
-  }
-
-  .skill-bar-fill {
-    animation: growBar linear both;
-    animation-timeline: view();
-    animation-range: entry 10% cover 40%;
-  }
-}
-
-/* ===== Responsive (tablets and phones) ===== */
-@media (max-width: 800px) {
-  .about-grid {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .about-facts {
-    text-align: left;
-  }
-
-  .skills-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 600px) {
-  .nav {
-    flex-direction: column;
-    gap: 0.6rem;
-  }
-
-  .nav-links {
-    gap: 1rem;
-    font-size: 0.95rem;
-  }
-
-  .hero h1 {
-    font-size: 2.5rem;
-  }
-
-  .hero-role {
-    font-size: 1.2rem;
-  }
-
-  .about-facts {
-    grid-template-columns: 1fr;
-  }
-
-  .section {
-    padding: 3.5rem 1.2rem;
-  }
-}
-
-/* Respect users who prefer less motion */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation: none !important;
-    transition: none !important;
-  }
-}
-/* ===== Reset & Variables ===== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-:root {
-  --bg: #ede9fe;            /* light purple background */
-  --bg-light: #f5f3ff;      /* header, footer, cards */
-  --text: #2e1065;          /* dark purple text */
-  --text-muted: #5b4b8a;
-  --accent: #7c3aed;        /* main purple */
-  --accent-dark: #6d28d9;
-  --accent-soft: #c4b5fd;
-  --max-width: 1100px;
-}
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 70px; /* so the sticky header doesn't cover section titles */
-}
-
-body {
-  font-family: "Segoe UI", Arial, sans-serif;
-  background-color: var(--bg);
-  color: var(--text);
-  line-height: 1.6;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-ul {
-  list-style: none;
-}
-
-/* Remove the outline on mouse click, keep it for keyboard users */
-a:focus {
-  outline: none;
-}
-
-a:focus-visible {
-  outline: 2px dashed var(--accent);
-  outline-offset: 4px;
-  border-radius: 4px;
-}
-
-/* ===== Header / Navigation ===== */
-.header {
-  background-color: var(--bg-light);
-  box-shadow: 0 2px 12px rgba(124, 58, 237, 0.15);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  animation: slideDown 0.6s ease-out;
-}
-
-.nav {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 1rem 1.5rem;
+.timeline-heading {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-}
-
-.logo {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--accent);
-}
-
-.nav-links {
-  display: flex;
-  gap: 1.5rem;
-}
-
-.nav-links a {
-  color: var(--text-muted);
-  position: relative;
-  padding-bottom: 4px;
-  transition: color 0.3s;
-}
-
-/* Animated underline on hover */
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 2px;
-  background-color: var(--accent);
-  transition: width 0.3s ease;
-}
-
-.nav-links a:hover {
-  color: var(--accent);
-}
-
-.nav-links a:hover::after {
-  width: 100%;
-}
-
-/* ===== Hero Section ===== */
-.hero {
-  position: relative;
-  overflow: hidden;
-  min-height: 80vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 2rem 1.5rem;
-}
-
-.hero > *:not(.shape) {
-  position: relative;
-  z-index: 1;
-}
-
-.hero-greeting {
-  color: var(--accent);
-  font-size: 1.1rem;
-  animation: fadeInUp 0.8s ease-out both;
-}
-
-.hero h1 {
-  font-size: 3.5rem;
-  margin: 0.5rem 0;
-  animation: fadeInUp 0.8s ease-out 0.2s both;
-}
-
-.hero-role {
-  color: var(--text-muted);
+  gap: 0.7rem;
   font-size: 1.5rem;
-  margin-bottom: 2rem;
-  animation: fadeInUp 0.8s ease-out 0.4s both;
+  color: var(--accent);
+  margin-bottom: 1.8rem;
 }
 
-.btn {
-  display: inline-block;
-  background-color: var(--accent);
-  color: #ffffff;
-  padding: 0.8rem 2rem;
-  border-radius: 6px;
-  font-weight: 600;
-  box-shadow: 0 6px 16px rgba(124, 58, 237, 0.35);
-  transition: transform 0.2s, background-color 0.2s;
-  animation:
-    fadeInUp 0.8s ease-out 0.6s both,
-    pulse 2.5s ease-in-out 1.6s infinite;
-}
-
-.btn:hover {
-  transform: translateY(-3px);
-  background-color: var(--accent-dark);
-}
-
-/* ===== Floating background shapes ===== */
-.shape {
-  position: absolute;
-  border-radius: 50%;
-  background-color: var(--accent-soft);
-  opacity: 0.55;
-  z-index: 0;
-}
-
-.shape-1 {
-  width: 220px;
-  height: 220px;
-  top: 8%;
-  left: 8%;
-  animation: float 7s ease-in-out infinite;
-}
-
-.shape-2 {
-  width: 150px;
-  height: 150px;
-  bottom: 10%;
-  right: 10%;
-  animation: float 9s ease-in-out infinite reverse;
-}
-
-/* ===== Generic Section Styles ===== */
-.section {
-  padding: 5rem 1.5rem;
-}
-
-.section-alt {
-  background-color: var(--bg-light);
-}
-
-.container {
-  max-width: var(--max-width);
-  margin: 0 auto;
-}
-
-.section-title {
-  font-size: 2.2rem;
-  text-align: center;
-  margin-bottom: 3rem;
+.timeline {
   position: relative;
-  padding-bottom: 1rem;
+  padding-left: 2rem;
 }
 
-/* Small purple line under each section title */
-.section-title::after {
+/* The vertical line */
+.timeline::before {
   content: "";
   position: absolute;
-  left: 50%;
-  bottom: 0;
-  transform: translateX(-50%);
-  width: 70px;
-  height: 4px;
+  left: 7px;
+  top: 6px;
+  bottom: 6px;
+  width: 3px;
   border-radius: 2px;
-  background-color: var(--accent);
+  background: linear-gradient(to bottom, var(--accent), var(--accent-soft));
 }
 
-/* ===== About Section ===== */
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 3rem;
-  align-items: center;
-}
-
-.about-image {
-  display: flex;
-  justify-content: center;
-}
-
-.avatar {
-  width: 240px;
-  height: 240px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent), var(--accent-soft));
-  color: #ffffff;
-  font-size: 4.5rem;
-  font-weight: 700;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 6px solid var(--bg-light);
-  box-shadow: 0 0 0 4px var(--accent-soft), 0 12px 30px rgba(124, 58, 237, 0.35);
-  transition: transform 0.4s ease;
-}
-
-.avatar:hover {
-  transform: rotate(-4deg) scale(1.04);
-}
-
-/* If you use a real photo with <img class="avatar-img">, this styles it */
-.avatar-img {
-  width: 240px;
-  height: 240px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 6px solid var(--bg-light);
-  box-shadow: 0 0 0 4px var(--accent-soft), 0 12px 30px rgba(124, 58, 237, 0.35);
-  transition: transform 0.4s ease;
-}
-
-.avatar-img:hover {
-  transform: rotate(-4deg) scale(1.04);
-}
-
-.about-text h3 {
-  font-size: 1.6rem;
-  color: var(--accent);
-  margin-bottom: 1rem;
-}
-
-.about-text p {
-  color: var(--text-muted);
-  margin-bottom: 1rem;
-}
-
-.about-facts {
-  margin-top: 1.5rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.8rem 1.5rem;
-}
-
-.about-facts li {
+.timeline-item {
+  position: relative;
   background-color: var(--bg-light);
-  padding: 0.7rem 1rem;
-  border-left: 4px solid var(--accent);
-  border-radius: 4px;
-  transition: transform 0.25s, box-shadow 0.25s;
+  padding: 1.2rem 1.4rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.12);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.about-facts li:hover {
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-item:hover {
   transform: translateX(6px);
-  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.2);
+  box-shadow: 0 10px 24px rgba(124, 58, 237, 0.22);
 }
 
-/* ===== Skills Section ===== */
-.skills-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem 3rem;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.skill-info {
-  display: flex;
-  justify-content: space-between;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-
-.skill-bar {
-  height: 12px;
-  background-color: var(--accent-soft);
-  border-radius: 999px;
-  overflow: hidden;
-}
-
-.skill-bar-fill {
-  height: 100%;
-  width: var(--level);
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--accent), #a78bfa);
-}
-
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.8rem;
-  margin-top: 3rem;
-}
-
-.tag {
-  background-color: var(--bg);
-  color: var(--accent-dark);
-  padding: 0.4rem 1.1rem;
-  border-radius: 999px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  border: 2px solid var(--accent-soft);
-  transition: background-color 0.25s, color 0.25s, transform 0.25s;
-}
-
-.tag:hover {
+/* The dot on the line */
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: calc(-2rem + 1px);
+  top: 1.5rem;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
   background-color: var(--accent);
-  color: #ffffff;
-  transform: translateY(-3px);
+  border: 3px solid var(--bg);
+  box-shadow: 0 0 0 2px var(--accent-soft);
+  transition: transform 0.3s;
 }
 
-/* ===== Projects Section ===== */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+.timeline-item:hover::before {
+  transform: scale(1.3);
 }
 
-.project-card {
-  background-color: var(--bg-light);
-  border-radius: 14px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 4px 16px rgba(124, 58, 237, 0.12);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 18px 36px rgba(124, 58, 237, 0.28);
-}
-
-/* Image area (gradient + emoji for now, replace with real screenshots later) */
-.project-thumb {
-  height: 180px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-
-.thumb-1 { background: linear-gradient(135deg, #7c3aed, #c4b5fd); }
-.thumb-2 { background: linear-gradient(135deg, #a855f7, #f0abfc); }
-.thumb-3 { background: linear-gradient(135deg, #6366f1, #a5b4fc); }
-
-.project-emoji {
-  font-size: 4rem;
-  transition: transform 0.4s ease;
-}
-
-.project-card:hover .project-emoji {
-  transform: scale(1.3) rotate(8deg);
-}
-
-/* If you use a real screenshot with <img class="project-img">, this styles it */
-.project-img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
-
-.project-card:hover .project-img {
-  transform: scale(1.08);
-}
-
-.project-body {
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
-.project-body h3 {
-  font-size: 1.3rem;
-  color: var(--accent);
-  margin-bottom: 0.6rem;
-}
-
-.project-body p {
-  color: var(--text-muted);
-  font-size: 0.95rem;
-  margin-bottom: 1rem;
-}
-
-.project-tech {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1.2rem;
-}
-
-.project-tech span {
+.timeline-date {
+  display: inline-block;
   background-color: var(--bg);
   color: var(--accent-dark);
   font-size: 0.8rem;
-  font-weight: 600;
-  padding: 0.2rem 0.7rem;
+  font-weight: 700;
+  padding: 0.15rem 0.8rem;
   border-radius: 999px;
-}
-
-.project-links {
-  display: flex;
-  gap: 0.8rem;
-  margin-top: auto; /* pushes the buttons to the bottom of every card */
-}
-
-.link-btn {
-  background-color: var(--accent);
-  color: #ffffff;
-  padding: 0.5rem 1.2rem;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  border: 2px solid var(--accent);
-  transition: background-color 0.25s, color 0.25s, transform 0.25s;
-}
-
-.link-btn:hover {
-  background-color: var(--accent-dark);
-  border-color: var(--accent-dark);
-  transform: translateY(-2px);
-}
-
-.link-outline {
-  background-color: transparent;
-  color: var(--accent);
-}
-
-.link-outline:hover {
-  background-color: var(--accent);
-  color: #ffffff;
-}
-
-/* ===== Footer ===== */
-.footer {
-  text-align: center;
-  padding: 1.5rem;
-  color: var(--text-muted);
-  background-color: var(--bg-light);
-}
-
-/* ===== Animations ===== */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideDown {
-  from {
-    transform: translateY(-100%);
-  }
-  to {
-    transform: translateY(0);
-  }
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0) scale(1);
-  }
-  50% {
-    transform: translateY(-25px) scale(1.05);
-  }
-}
-
-@keyframes pulse {
-  0%, 100% {
-    box-shadow: 0 6px 16px rgba(124, 58, 237, 0.35);
-  }
-  50% {
-    box-shadow: 0 6px 28px rgba(124, 58, 237, 0.65);
-  }
-}
-
-@keyframes growBar {
-  from { width: 0; }
-  to   { width: var(--level); }
-}
-
-/* ===== Scroll animations (pure CSS) =====
-   These run as you scroll down to each section.
-   Works in Chrome, Edge and newer browsers. In other browsers,
-   everything simply shows normally with no animation. */
-@supports (animation-timeline: view()) {
-  .section-title,
-  .about-image,
-  .about-text,
-  .tags,
-  .project-card {
-    animation: fadeInUp linear both;
-    animation-timeline: view();
-    animation-range: entry 0% entry 60%;
-  }
-
-  .skill-bar-fill {
-    animation: growBar linear both;
-    animation-timeline: view();
-    animation-range: entry 10% cover 40%;
-  }
-}
-
-/* ===== Responsive (tablets and phones) ===== */
-@media (max-width: 900px) {
-  .projects-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (max-width: 800px) {
-  .about-grid {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .about-facts {
-    text-align: left;
-  }
-
-  .skills-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 600px) {
-  .nav {
-    flex-direction: column;
-    gap: 0.6rem;
-  }
-
-  .nav-links {
-    gap: 1rem;
-    font-size: 0.95rem;
-  }
-
-  .hero h1 {
-    font-size: 2.5rem;
-  }
-
-  .hero-role {
-    font-size: 1.2rem;
-  }
-
-  .about-facts {
-    grid-template-columns: 1fr;
-  }
-
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .section {
-    padding: 3.5rem 1.2rem;
-  }
-}
-
-/* Respect users who prefer less motion */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation: none !important;
-    transition: none !important;
-  }
-}
-/* ===== Reset & Variables ===== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-:root {
-  --bg: #ede9fe;            /* light purple background */
-  --bg-light: #f5f3ff;      /* header, footer, cards */
-  --text: #2e1065;          /* dark purple text */
-  --text-muted: #5b4b8a;
-  --accent: #7c3aed;        /* main purple */
-  --accent-dark: #6d28d9;
-  --accent-soft: #c4b5fd;
-  --max-width: 1100px;
-}
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 70px; /* so the sticky header doesn't cover section titles */
-}
-
-body {
-  font-family: "Segoe UI", Arial, sans-serif;
-  background-color: var(--bg);
-  color: var(--text);
-  line-height: 1.6;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-ul {
-  list-style: none;
-}
-
-/* Remove the outline on mouse click, keep it for keyboard users */
-a:focus {
-  outline: none;
-}
-
-a:focus-visible {
-  outline: 2px dashed var(--accent);
-  outline-offset: 4px;
-  border-radius: 4px;
-}
-
-/* ===== Header / Navigation ===== */
-.header {
-  background-color: var(--bg-light);
-  box-shadow: 0 2px 12px rgba(124, 58, 237, 0.15);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  animation: slideDown 0.6s ease-out;
-}
-
-.nav {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 1rem 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--accent);
-}
-
-.nav-links {
-  display: flex;
-  gap: 1.5rem;
-}
-
-.nav-links a {
-  color: var(--text-muted);
-  position: relative;
-  padding-bottom: 4px;
-  transition: color 0.3s;
-}
-
-/* Animated underline on hover */
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 2px;
-  background-color: var(--accent);
-  transition: width 0.3s ease;
-}
-
-.nav-links a:hover {
-  color: var(--accent);
-}
-
-.nav-links a:hover::after {
-  width: 100%;
-}
-
-/* ===== Hero Section ===== */
-.hero {
-  position: relative;
-  overflow: hidden;
-  min-height: 80vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 2rem 1.5rem;
-}
-
-.hero > *:not(.shape) {
-  position: relative;
-  z-index: 1;
-}
-
-.hero-greeting {
-  color: var(--accent);
-  font-size: 1.1rem;
-  animation: fadeInUp 0.8s ease-out both;
-}
-
-.hero h1 {
-  font-size: 3.5rem;
-  margin: 0.5rem 0;
-  animation: fadeInUp 0.8s ease-out 0.2s both;
-}
-
-.hero-role {
-  color: var(--text-muted);
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
-  animation: fadeInUp 0.8s ease-out 0.4s both;
-}
-
-.btn {
-  display: inline-block;
-  background-color: var(--accent);
-  color: #ffffff;
-  padding: 0.8rem 2rem;
-  border-radius: 6px;
-  font-weight: 600;
-  box-shadow: 0 6px 16px rgba(124, 58, 237, 0.35);
-  transition: transform 0.2s, background-color 0.2s;
-  animation:
-    fadeInUp 0.8s ease-out 0.6s both,
-    pulse 2.5s ease-in-out 1.6s infinite;
-}
-
-.btn:hover {
-  transform: translateY(-3px);
-  background-color: var(--accent-dark);
-}
-
-/* ===== Floating background shapes ===== */
-.shape {
-  position: absolute;
-  border-radius: 50%;
-  background-color: var(--accent-soft);
-  opacity: 0.55;
-  z-index: 0;
-}
-
-.shape-1 {
-  width: 220px;
-  height: 220px;
-  top: 8%;
-  left: 8%;
-  animation: float 7s ease-in-out infinite;
-}
-
-.shape-2 {
-  width: 150px;
-  height: 150px;
-  bottom: 10%;
-  right: 10%;
-  animation: float 9s ease-in-out infinite reverse;
-}
-
-/* ===== Generic Section Styles ===== */
-.section {
-  padding: 5rem 1.5rem;
-}
-
-.section-alt {
-  background-color: var(--bg-light);
-}
-
-.container {
-  max-width: var(--max-width);
-  margin: 0 auto;
-}
-
-.section-title {
-  font-size: 2.2rem;
-  text-align: center;
-  margin-bottom: 3rem;
-  position: relative;
-  padding-bottom: 1rem;
-}
-
-/* Small purple line under each section title */
-.section-title::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  transform: translateX(-50%);
-  width: 70px;
-  height: 4px;
-  border-radius: 2px;
-  background-color: var(--accent);
-}
-
-/* ===== About Section ===== */
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 3rem;
-  align-items: center;
-}
-
-.about-image {
-  display: flex;
-  justify-content: center;
-}
-
-.avatar {
-  width: 240px;
-  height: 240px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent), var(--accent-soft));
-  color: #ffffff;
-  font-size: 4.5rem;
-  font-weight: 700;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 6px solid var(--bg-light);
-  box-shadow: 0 0 0 4px var(--accent-soft), 0 12px 30px rgba(124, 58, 237, 0.35);
-  transition: transform 0.4s ease;
-}
-
-.avatar:hover {
-  transform: rotate(-4deg) scale(1.04);
-}
-
-.avatar-img {
-  width: 240px;
-  height: 240px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 6px solid var(--bg-light);
-  box-shadow: 0 0 0 4px var(--accent-soft), 0 12px 30px rgba(124, 58, 237, 0.35);
-  transition: transform 0.4s ease;
-}
-
-.avatar-img:hover {
-  transform: rotate(-4deg) scale(1.04);
-}
-
-.about-text h3 {
-  font-size: 1.6rem;
-  color: var(--accent);
-  margin-bottom: 1rem;
-}
-
-.about-text p {
-  color: var(--text-muted);
-  margin-bottom: 1rem;
-}
-
-.about-facts {
-  margin-top: 1.5rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.8rem 1.5rem;
-}
-
-.about-facts li {
-  background-color: var(--bg-light);
-  padding: 0.7rem 1rem;
-  border-left: 4px solid var(--accent);
-  border-radius: 4px;
-  transition: transform 0.25s, box-shadow 0.25s;
-}
-
-.about-facts li:hover {
-  transform: translateX(6px);
-  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.2);
-}
-
-/* ===== Skills Section ===== */
-.skills-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem 3rem;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.skill-info {
-  display: flex;
-  justify-content: space-between;
-  font-weight: 600;
   margin-bottom: 0.5rem;
 }
 
-.skill-bar {
-  height: 12px;
-  background-color: var(--accent-soft);
-  border-radius: 999px;
-  overflow: hidden;
+.timeline-item h4 {
+  font-size: 1.1rem;
 }
 
-.skill-bar-fill {
-  height: 100%;
-  width: var(--level);
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--accent), #a78bfa);
-}
-
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.8rem;
-  margin-top: 3rem;
-}
-
-.tag {
-  background-color: var(--bg);
-  color: var(--accent-dark);
-  padding: 0.4rem 1.1rem;
-  border-radius: 999px;
-  font-size: 0.95rem;
+.timeline-place {
+  color: var(--accent);
   font-weight: 600;
-  border: 2px solid var(--accent-soft);
-  transition: background-color 0.25s, color 0.25s, transform 0.25s;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
 }
 
-.tag:hover {
-  background-color: var(--accent);
-  color: #ffffff;
-  transform: translateY(-3px);
+.timeline-item p:last-child {
+  color: var(--text-muted);
+  font-size: 0.95rem;
 }
 
 /* ===== Projects Section ===== */
@@ -1851,7 +687,6 @@ a:focus-visible {
   font-size: 1.1rem;
 }
 
-/* Social links */
 .socials {
   display: flex;
   gap: 0.9rem;
@@ -1878,7 +713,6 @@ a:focus-visible {
   box-shadow: 0 10px 20px rgba(124, 58, 237, 0.4);
 }
 
-/* Form */
 .contact-form {
   background-color: var(--bg);
   padding: 2rem;
@@ -1897,7 +731,6 @@ a:focus-visible {
   transition: color 0.25s;
 }
 
-/* Label turns purple when its field is focused */
 .form-group:focus-within label {
   color: var(--accent);
 }
@@ -1933,7 +766,6 @@ a:focus-visible {
   transform: translateY(-2px);
 }
 
-/* Shows a red border only after the user typed something invalid */
 .form-group input:user-invalid,
 .form-group textarea:user-invalid {
   border-color: #e11d48;
@@ -2036,14 +868,14 @@ a:focus-visible {
   }
 }
 
-/* ===== Scroll animations (pure CSS) =====
-   Works in Chrome, Edge and newer browsers. In other browsers,
-   everything simply shows normally with no animation. */
+/* ===== Scroll animations (pure CSS) ===== */
 @supports (animation-timeline: view()) {
   .section-title,
   .about-image,
   .about-text,
   .tags,
+  .timeline-heading,
+  .timeline-item,
   .project-card,
   .contact-info,
   .contact-form {
@@ -2058,7 +890,6 @@ a:focus-visible {
     animation-range: entry 10% cover 40%;
   }
 
-  /* Back to top button fades in after scrolling 400px */
   .back-to-top {
     animation: showButton linear both;
     animation-timeline: scroll(root);
@@ -2087,22 +918,56 @@ a:focus-visible {
     grid-template-columns: 1fr;
   }
 
+  .timeline-grid {
+    grid-template-columns: 1fr;
+  }
+
   .contact-grid {
     grid-template-columns: 1fr;
   }
 }
 
-@media (max-width: 600px) {
-  .nav {
-    flex-direction: column;
-    gap: 0.6rem;
+/* Hamburger menu on phones and small tablets */
+@media (max-width: 700px) {
+  .menu-btn {
+    display: flex;
   }
 
   .nav-links {
-    gap: 1rem;
-    font-size: 0.95rem;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background-color: var(--bg-light);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, box-shadow 0.4s ease;
   }
 
+  .menu-toggle:checked ~ .nav-links {
+    max-height: 360px;
+    box-shadow: 0 12px 20px rgba(124, 58, 237, 0.18);
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 0.9rem 1.5rem;
+    border-top: 1px solid var(--bg);
+  }
+
+  .nav-links a:hover {
+    background-color: var(--bg);
+  }
+
+  /* The animated underline is not needed in the dropdown */
+  .nav-links a::after {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
   .hero h1 {
     font-size: 2.5rem;
   }
@@ -2135,33 +1000,8 @@ a:focus-visible {
     transition: none !important;
   }
 }
-/* ===== Day 5 polish ===== */
 
-/* Skip link: hidden until focused with the keyboard */
-.skip-link {
-  position: absolute;
-  top: -60px;
-  left: 1rem;
-  background-color: var(--accent);
-  color: #ffffff;
-  padding: 0.6rem 1.2rem;
-  border-radius: 0 0 8px 8px;
-  font-weight: 600;
-  z-index: 200;
-  transition: top 0.25s;
-}
-
-.skip-link:focus {
-  top: 0;
-}
-
-/* Text selection color */
-::selection {
-  background-color: var(--accent);
-  color: #ffffff;
-}
-
-/* Print styles: clean page if someone prints or saves as PDF */
+/* ===== Print styles ===== */
 @media print {
   .header,
   .back-to-top,
@@ -2180,7 +1020,8 @@ a:focus-visible {
     padding: 1.5rem 0;
   }
 
-  .project-card {
+  .project-card,
+  .timeline-item {
     box-shadow: none;
     border: 1px solid #cccccc;
     break-inside: avoid;

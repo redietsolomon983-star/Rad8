@@ -4,29 +4,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title> Redeit Solomon | Web Developer Portfolio</title>
-  <meta name="description" content="Portfolio of Your Name, a web developer building clean, responsive websites with HTML and CSS.">
+  <title>Redeit Solomon | Web Developer Portfolio</title>
+  <meta name="description" content="Portfolio of Redeit Solomon, a web developer building clean, responsive websites with HTML and CSS.">
   <meta name="author" content="Redeit Solomon">
   <meta name="theme-color" content="#7c3aed">
+
   <!-- Favicon -->
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
   <!-- Social preview (WhatsApp, LinkedIn, Facebook, Telegram) -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Redeit solomon | Web Developer Portfolio">
+  <meta property="og:title" content="Redeit Solomon | Web Developer Portfolio">
   <meta property="og:description" content="Clean, responsive websites built with HTML and CSS.">
-  <meta property="og:url" content="https://Rad8.github.io/portfolio/">
+  <meta property="og:url" content="https://rad8.github.io/portfolio/">
 
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body id="top">
-<a href="https://Rad8.github.io/portfolio/" class="link-btn" target="_blank" rel="noopener">Live Demo</a>
+
+  <a href="#about" class="skip-link">Skip to content</a>
+
   <header class="header">
     <nav class="nav">
       <a href="#top" class="logo">Redeit Solomon</a>
+
+      <!-- Pure CSS hamburger: checkbox + label + links (keep this order) -->
+      <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">
+      <label for="menu-toggle" class="menu-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -72,7 +85,7 @@
             <ul class="about-facts">
               <li><strong>Name:</strong> Redeit Solomon</li>
               <li><strong>Location:</strong> Ethiopia</li>
-              <li><strong>Email:</strong> redeitsolomon983@gmail.com</li>
+              <li><strong>Email:</strong> redeitsolomon983@Gmail.com</li>
               <li><strong>Status:</strong> Open to opportunities</li>
             </ul>
           </div>
@@ -120,10 +133,10 @@
           <div class="skill">
             <div class="skill-info">
               <span>Git &amp; GitHub</span>
-              <span>70%</span>
+              <span>65%</span>
             </div>
             <div class="skill-bar">
-              <div class="skill-bar-fill" style="--level: 70%;"></div>
+              <div class="skill-bar-fill" style="--level: 65%;"></div>
             </div>
           </div>
 
@@ -135,6 +148,75 @@
           <span class="tag">CSS Grid</span>
           <span class="tag">Animations</span>
           <span class="tag">Media Queries</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EXPERIENCE & EDUCATION ===== -->
+    <section class="section" id="experience">
+      <div class="container">
+        <h2 class="section-title">Experience &amp; Education</h2>
+
+        <div class="timeline-grid">
+
+          <!-- Experience -->
+          <div class="timeline-column">
+            <h3 class="timeline-heading"><span>💼</span> Experience</h3>
+
+            <div class="timeline">
+
+              <div class="timeline-item">
+                <span class="timeline-date">2024 - Present</span>
+                <h4>Freelance Web Developer</h4>
+                <p class="timeline-place">Self-employed</p>
+                <p>
+                  Building simple, responsive websites for small businesses
+                  and friends using HTML and CSS.
+                </p>
+              </div>
+
+              <div class="timeline-item">
+                <span class="timeline-date">2024 - 2026</span>
+                <h4>Personal Projects</h4>
+                <p class="timeline-place">GitHub</p>
+                <p>
+                  Built a portfolio, a restaurant page, and a blog layout
+                  while learning layout, animations, and Git.
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Education -->
+          <div class="timeline-column">
+            <h3 class="timeline-heading"><span>🎓</span> Education</h3>
+
+            <div class="timeline">
+
+              <div class="timeline-item">
+                <span class="timeline-date">2023 - 2027</span>
+                <h4>Your Degree or Field of Study</h4>
+                <p class="timeline-place">Arbaminch University</p>
+                <p>
+                  Studying core subjects and growing my skills in
+                  web development alongside my classes.
+                </p>
+              </div>
+
+              <div class="timeline-item">
+                <span class="timeline-date">2025</span>
+                <h4>Web Development Course</h4>
+                <p class="timeline-place">Online (freeCodeCamp, YouTube, etc.)</p>
+                <p>
+                  Completed self-paced courses covering HTML, CSS,
+                  responsive design, and Git.
+                </p>
+              </div>
+
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -162,8 +244,8 @@
                 <span>Animations</span>
               </div>
               <div class="project-links">
-                <a href="#" class="link-btn">Live Demo</a>
-                <a href="https://github.com/rad8/portfolio" class="link-btn link-outline" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://Rad8.github.io/portfolio/" class="link-btn" target="_blank" rel="noopener">Live Demo</a>
+                <a href="https://github.com/Rad8/portfolio" class="link-btn link-outline" target="_blank" rel="noopener">GitHub</a>
               </div>
             </div>
           </article>
@@ -185,7 +267,7 @@
               </div>
               <div class="project-links">
                 <a href="#" class="link-btn">Live Demo</a>
-                <a href="https://github.com/YOUR-USERNAME/restaurant-page" class="link-btn link-outline" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://github.com/Rad8/restaurant-page" class="link-btn link-outline" target="_blank" rel="noopener">GitHub</a>
               </div>
             </div>
           </article>
@@ -207,7 +289,7 @@
               </div>
               <div class="project-links">
                 <a href="#" class="link-btn">Live Demo</a>
-                <a href="https://github.com/rad8/blog-layout" class="link-btn link-outline" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://github.com/Rad8/blog-layout" class="link-btn link-outline" target="_blank" rel="noopener">GitHub</a>
               </div>
             </div>
           </article>
@@ -223,7 +305,6 @@
 
         <div class="contact-grid">
 
-          <!-- Left side: info and social links -->
           <div class="contact-info">
             <h3>Let's work together</h3>
             <p>
@@ -232,21 +313,20 @@
             </p>
 
             <ul class="contact-details">
-              <li><span class="contact-icon">📧</span> redeitsolomon983@gmail.com</li>
+              <li><span class="contact-icon">📧</span> you@example.com</li>
               <li><span class="contact-icon">📍</span> Ethiopia</li>
               <li><span class="contact-icon">🕒</span> Replies within 24 hours</li>
             </ul>
 
             <div class="socials">
-              <a href="https://github.com/YOUR-USERNAME" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">GH</a>
-              <a href="https://linkedin.com/in/YOUR-USERNAME" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">in</a>
-              <a href="https://twitter.com/YOUR-USERNAME" target="_blank" rel="noopener" class="social-link" aria-label="Twitter">X</a>
+              <a href="https://github.com/Rad8" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">GH</a>
+              <a href="https://linkedin.com/in/Rad8" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">in</a>
+              <a href="https://twitter.com/Rad8" target="_blank" rel="noopener" class="social-link" aria-label="Twitter">X</a>
               <a href="mailto:redeitsolomon983@gmail.com" class="social-link" aria-label="Email">@</a>
             </div>
           </div>
 
-          <!-- Right side: form -->
-          <form class="contact-form" action="mailto:redeitsolomon983@gmail.com" method="POST" enctype="text/plain">
+          <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
             <div class="form-group">
               <label for="name">Redeit Solomon</label>
               <input type="text" id="name" name="name" placeholder="Redeit Solomon" required>
@@ -282,45 +362,6 @@
 
   <!-- Back to top button -->
   <a href="#top" class="back-to-top" aria-label="Back to top">↑</a>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Page not found | Your Name</title>
-  <link rel="icon" href="/portfolio/favicon.svg" type="image/svg+xml">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 2rem;
-      font-family: "Segoe UI", Arial, sans-serif;
-      background-color: #ede9fe;
-      color: #2e1065;
-    }
-    h1 { font-size: 6rem; color: #7c3aed; line-height: 1; }
-    p { margin: 1rem 0 2rem; color: #5b4b8a; font-size: 1.2rem; }
-    a {
-      background-color: #7c3aed;
-      color: #ffffff;
-      text-decoration: none;
-      padding: 0.8rem 2rem;
-      border-radius: 6px;
-      font-weight: 600;
-    }
-    a:hover { background-color: #6d28d9; }
-  </style>
-</head>
-<body>
-  <h1>404</h1>
-  <p>Oops! This page does not exist.</p>
-  <a href="/portfolio/">Back to Home</a>
+
 </body>
 </html>
