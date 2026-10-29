@@ -1,5 +1,6 @@
 /* ===== Reset & Variables ===== */
 /* ===== Reset & Variables ===== */
+/* ===== Reset & Variables ===== */
 * {
   margin: 0;
   padding: 0;
@@ -7,6 +8,7 @@
 }
 
 :root {
+  color-scheme: light;
   --bg: #ede9fe;            /* light purple background */
   --bg-light: #f5f3ff;      /* header, footer, cards */
   --text: #2e1065;          /* dark purple text */
@@ -14,7 +16,21 @@
   --accent: #7c3aed;        /* main purple */
   --accent-dark: #6d28d9;
   --accent-soft: #c4b5fd;
+  --placeholder: #9b8cc4;
   --max-width: 1100px;
+}
+
+/* ===== Dark mode: when the checkbox is checked, swap the colors ===== */
+:root:has(#theme-toggle:checked) {
+  color-scheme: dark;
+  --bg: #1b1735;
+  --bg-light: #26204a;
+  --text: #ede9fe;
+  --text-muted: #b9aee0;
+  --accent: #8b5cf6;
+  --accent-dark: #7c3aed;
+  --accent-soft: #4c3f85;
+  --placeholder: #8478b5;
 }
 
 html {
@@ -27,6 +43,25 @@ body {
   background-color: var(--bg);
   color: var(--text);
   line-height: 1.6;
+}
+
+/* Smooth color change when switching themes */
+body,
+.header,
+.section-alt,
+.footer,
+.avatar,
+.about-facts li,
+.tag,
+.timeline-item,
+.service-card,
+.project-card,
+.contact-form,
+.form-group input,
+.form-group textarea,
+.nav-links {
+  transition-property: background-color, color, border-color, box-shadow, transform;
+  transition-duration: 0.4s;
 }
 
 a {
@@ -71,6 +106,49 @@ a:focus-visible {
 
 .skip-link:focus {
   top: 0;
+}
+
+/* ===== Dark mode toggle button ===== */
+.theme-toggle {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.theme-btn {
+  position: fixed;
+  left: 1.5rem;
+  bottom: 1.5rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--bg-light);
+  border: 2px solid var(--accent);
+  box-shadow: 0 6px 18px rgba(124, 58, 237, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+  cursor: pointer;
+  z-index: 90;
+  transition: transform 0.3s, background-color 0.4s;
+}
+
+.theme-btn::before {
+  content: "🌙";
+}
+
+.theme-toggle:checked + .theme-btn::before {
+  content: "☀️";
+}
+
+.theme-btn:hover {
+  transform: translateY(-5px) rotate(20deg);
+}
+
+.theme-toggle:focus-visible + .theme-btn {
+  outline: 2px dashed var(--accent);
+  outline-offset: 4px;
 }
 
 /* ===== Header / Navigation ===== */
@@ -162,13 +240,11 @@ a:focus-visible {
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* Keyboard focus on the hidden checkbox shows on the button */
 .menu-toggle:focus-visible + .menu-btn {
   outline: 2px dashed var(--accent);
   outline-offset: 3px;
 }
 
-/* Turn the three lines into an X when open */
 .menu-toggle:checked + .menu-btn span:nth-child(1) {
   transform: translateY(8px) rotate(45deg);
 }
@@ -366,7 +442,7 @@ a:focus-visible {
   padding: 0.7rem 1rem;
   border-left: 4px solid var(--accent);
   border-radius: 4px;
-  transition: transform 0.25s, box-shadow 0.25s;
+  transition: transform 0.25s, box-shadow 0.25s, background-color 0.4s;
 }
 
 .about-facts li:hover {
@@ -414,7 +490,7 @@ a:focus-visible {
 
 .tag {
   background-color: var(--bg);
-  color: var(--accent-dark);
+  color: var(--text);
   padding: 0.4rem 1.1rem;
   border-radius: 999px;
   font-size: 0.95rem;
@@ -450,7 +526,6 @@ a:focus-visible {
   padding-left: 2rem;
 }
 
-/* The vertical line */
 .timeline::before {
   content: "";
   position: absolute;
@@ -469,7 +544,7 @@ a:focus-visible {
   border-radius: 12px;
   margin-bottom: 1.5rem;
   box-shadow: 0 4px 14px rgba(124, 58, 237, 0.12);
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.4s;
 }
 
 .timeline-item:last-child {
@@ -481,7 +556,6 @@ a:focus-visible {
   box-shadow: 0 10px 24px rgba(124, 58, 237, 0.22);
 }
 
-/* The dot on the line */
 .timeline-item::before {
   content: "";
   position: absolute;
@@ -503,7 +577,7 @@ a:focus-visible {
 .timeline-date {
   display: inline-block;
   background-color: var(--bg);
-  color: var(--accent-dark);
+  color: var(--text);
   font-size: 0.8rem;
   font-weight: 700;
   padding: 0.15rem 0.8rem;
@@ -527,6 +601,57 @@ a:focus-visible {
   font-size: 0.95rem;
 }
 
+/* ===== Services Section ===== */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.service-card {
+  background-color: var(--bg);
+  padding: 2rem 1.5rem;
+  border-radius: 14px;
+  text-align: center;
+  border-bottom: 4px solid var(--accent);
+  box-shadow: 0 4px 16px rgba(124, 58, 237, 0.12);
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.4s;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 18px 36px rgba(124, 58, 237, 0.28);
+}
+
+.service-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 1.2rem;
+  border-radius: 50%;
+  background-color: var(--bg-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  transition: transform 0.4s ease, background-color 0.3s;
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.15) rotate(10deg);
+  background-color: var(--accent-soft);
+}
+
+.service-card h3 {
+  font-size: 1.15rem;
+  color: var(--accent);
+  margin-bottom: 0.6rem;
+}
+
+.service-card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
 /* ===== Projects Section ===== */
 .projects-grid {
   display: grid;
@@ -541,7 +666,7 @@ a:focus-visible {
   display: flex;
   flex-direction: column;
   box-shadow: 0 4px 16px rgba(124, 58, 237, 0.12);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.4s;
 }
 
 .project-card:hover {
@@ -609,7 +734,7 @@ a:focus-visible {
 
 .project-tech span {
   background-color: var(--bg);
-  color: var(--accent-dark);
+  color: var(--text);
   font-size: 0.8rem;
   font-weight: 600;
   padding: 0.2rem 0.7rem;
@@ -745,7 +870,7 @@ a:focus-visible {
   background-color: var(--bg-light);
   border: 2px solid var(--accent-soft);
   border-radius: 8px;
-  transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+  transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s, background-color 0.4s;
 }
 
 .form-group textarea {
@@ -755,7 +880,7 @@ a:focus-visible {
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-  color: #9b8cc4;
+  color: var(--placeholder);
 }
 
 .form-group input:focus,
@@ -876,6 +1001,7 @@ a:focus-visible {
   .tags,
   .timeline-heading,
   .timeline-item,
+  .service-card,
   .project-card,
   .contact-info,
   .contact-form {
@@ -898,6 +1024,12 @@ a:focus-visible {
 }
 
 /* ===== Responsive (tablets and phones) ===== */
+@media (max-width: 1000px) {
+  .services-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 @media (max-width: 900px) {
   .projects-grid {
     grid-template-columns: 1fr 1fr;
@@ -928,7 +1060,7 @@ a:focus-visible {
 }
 
 /* Hamburger menu on phones and small tablets */
-@media (max-width: 700px) {
+@media (max-width: 760px) {
   .menu-btn {
     display: flex;
   }
@@ -947,7 +1079,7 @@ a:focus-visible {
   }
 
   .menu-toggle:checked ~ .nav-links {
-    max-height: 360px;
+    max-height: 420px;
     box-shadow: 0 12px 20px rgba(124, 58, 237, 0.18);
   }
 
@@ -961,7 +1093,6 @@ a:focus-visible {
     background-color: var(--bg);
   }
 
-  /* The animated underline is not needed in the dropdown */
   .nav-links a::after {
     display: none;
   }
@@ -980,6 +1111,7 @@ a:focus-visible {
     grid-template-columns: 1fr;
   }
 
+  .services-grid,
   .projects-grid {
     grid-template-columns: 1fr;
   }
@@ -990,6 +1122,21 @@ a:focus-visible {
 
   .contact-form {
     padding: 1.4rem;
+  }
+
+  .theme-btn,
+  .back-to-top {
+    width: 44px;
+    height: 44px;
+    bottom: 1rem;
+  }
+
+  .theme-btn {
+    left: 1rem;
+  }
+
+  .back-to-top {
+    right: 1rem;
   }
 }
 
@@ -1005,6 +1152,8 @@ a:focus-visible {
 @media print {
   .header,
   .back-to-top,
+  .theme-btn,
+  .theme-toggle,
   .shape,
   .contact-form,
   .skip-link {
@@ -1021,6 +1170,7 @@ a:focus-visible {
   }
 
   .project-card,
+  .service-card,
   .timeline-item {
     box-shadow: none;
     border: 1px solid #cccccc;
