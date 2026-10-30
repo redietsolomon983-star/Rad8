@@ -1,6 +1,7 @@
 /* ===== Reset & Variables ===== */
 /* ===== Reset & Variables ===== */
 /* ===== Reset & Variables ===== */
+/* ===== Reset & Variables ===== */
 * {
   margin: 0;
   padding: 0;
@@ -56,6 +57,8 @@ body,
 .timeline-item,
 .service-card,
 .project-card,
+.process-step,
+.faq-item,
 .contact-form,
 .form-group input,
 .form-group textarea,
@@ -774,6 +777,132 @@ a:focus-visible {
   color: #ffffff;
 }
 
+/* ===== My Process Section ===== */
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem 1.5rem;
+  counter-reset: step;
+}
+
+.process-step {
+  counter-increment: step;
+  position: relative;
+  background-color: var(--bg);
+  padding: 2.6rem 1.5rem 1.8rem;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(124, 58, 237, 0.12);
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.4s;
+}
+
+.process-step:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 36px rgba(124, 58, 237, 0.28);
+}
+
+/* The numbered circle on top of each card (1, 2, 3, 4) */
+.process-step::before {
+  content: counter(step);
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 4px solid var(--bg-light);
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.35);
+}
+
+.process-step h3 {
+  font-size: 1.2rem;
+  color: var(--accent);
+  margin-bottom: 0.6rem;
+}
+
+.process-step p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* ===== FAQ Section ===== */
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1rem;
+}
+
+.faq-item {
+  background-color: var(--bg-light);
+  border-left: 4px solid var(--accent);
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.12);
+  overflow: hidden;
+  transition: box-shadow 0.3s, background-color 0.4s;
+}
+
+.faq-item:hover,
+.faq-item[open] {
+  box-shadow: 0 10px 24px rgba(124, 58, 237, 0.22);
+}
+
+.faq-item summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.1rem 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+}
+
+/* Hide the default arrow in all browsers */
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Our own + icon that turns into x when open */
+.faq-item summary::after {
+  content: "+";
+  flex-shrink: 0;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--accent);
+  transition: transform 0.3s;
+}
+
+.faq-item[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.faq-item[open] summary {
+  color: var(--accent);
+}
+
+.faq-item summary:focus-visible {
+  outline: 2px dashed var(--accent);
+  outline-offset: -4px;
+}
+
+.faq-answer {
+  padding: 0 1.4rem 1.3rem;
+  color: var(--text-muted);
+}
+
+.faq-item[open] .faq-answer {
+  animation: fadeIn 0.4s ease-out;
+}
+
 /* ===== Contact Section ===== */
 .contact-grid {
   display: grid;
@@ -950,6 +1079,17 @@ a:focus-visible {
   }
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @keyframes slideDown {
   from {
     transform: translateY(-100%);
@@ -1003,6 +1143,8 @@ a:focus-visible {
   .timeline-item,
   .service-card,
   .project-card,
+  .process-step,
+  .faq-item,
   .contact-info,
   .contact-form {
     animation: fadeInUp linear both;
@@ -1025,7 +1167,8 @@ a:focus-visible {
 
 /* ===== Responsive (tablets and phones) ===== */
 @media (max-width: 1000px) {
-  .services-grid {
+  .services-grid,
+  .process-grid {
     grid-template-columns: 1fr 1fr;
   }
 }
@@ -1079,7 +1222,7 @@ a:focus-visible {
   }
 
   .menu-toggle:checked ~ .nav-links {
-    max-height: 420px;
+    max-height: 480px;
     box-shadow: 0 12px 20px rgba(124, 58, 237, 0.18);
   }
 
@@ -1112,7 +1255,8 @@ a:focus-visible {
   }
 
   .services-grid,
-  .projects-grid {
+  .projects-grid,
+  .process-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1171,6 +1315,8 @@ a:focus-visible {
 
   .project-card,
   .service-card,
+  .process-step,
+  .faq-item,
   .timeline-item {
     box-shadow: none;
     border: 1px solid #cccccc;
