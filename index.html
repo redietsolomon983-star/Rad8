@@ -5,9 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Redeit Solomon | Web Developer Portfolio</title>
-  <meta name="description" content="Redeit Solomon, a web developer building clean, responsive websites with HTML and CSS.">
+  <meta name="description" content="Portfolio of Redeit Solomon, a web developer building clean, responsive websites with HTML and CSS.">
   <meta name="author" content="Redeit Solomon">
+  <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#7c3aed">
+  <link rel="canonical" href="https://Rad8.github.io/portfolio/">
 
   <!-- Favicon -->
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -17,6 +19,8 @@
   <meta property="og:title" content="Redeit Solomon | Web Developer Portfolio">
   <meta property="og:description" content="Clean, responsive websites built with HTML and CSS.">
   <meta property="og:url" content="https://Rad8.github.io/portfolio/">
+  <meta property="og:image" content="https://Rad8.github.io/portfolio/images/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
 
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -26,10 +30,10 @@
   <input type="checkbox" id="theme-toggle" class="theme-toggle" aria-label="Switch between light and dark mode">
   <label for="theme-toggle" class="theme-btn" title="Switch light / dark mode"></label>
 
-  <a href="#about" class="skip-link">Skip to content</a>
+  <a href="#main" class="skip-link">Skip to content</a>
 
   <header class="header">
-    <nav class="nav">
+    <nav class="nav" aria-label="Main navigation">
       <a href="#top" class="logo">Redeit Solomon</a>
 
       <!-- Pure CSS hamburger: checkbox + label + links (keep this order) -->
@@ -52,7 +56,7 @@
     </nav>
   </header>
 
-  <main>
+  <main id="main">
 
     <!-- ===== HERO ===== -->
     <section class="hero">
@@ -72,7 +76,7 @@
 
         <div class="about-grid">
           <div class="about-image">
-            <div class="avatar">RS</div>
+           <img src="images/profile.jpg" alt="Photo of Your Name" class="avatar-img" width="240" height="240" loading="lazy" decoding="async">
           </div>
 
           <div class="about-text">
@@ -91,7 +95,7 @@
             <ul class="about-facts">
               <li><strong>Name:</strong> Redeit Solomon</li>
               <li><strong>Location:</strong> Ethiopia</li>
-              <li><strong>Email:</strong> redeitsolomon983@gmail.com</li>
+              <li><strong>Email:</strong> redeitsolomon@gmail.com</li>
               <li><strong>Status:</strong> Open to opportunities</li>
             </ul>
           </div>
@@ -172,7 +176,7 @@
             <div class="timeline">
 
               <div class="timeline-item">
-                <span class="timeline-date">2025 - Present</span>
+                <span class="timeline-date">2024 - Present</span>
                 <h4>Freelance Web Developer</h4>
                 <p class="timeline-place">Self-employed</p>
                 <p>
@@ -182,7 +186,7 @@
               </div>
 
               <div class="timeline-item">
-                <span class="timeline-date">2025 - 2026</span>
+                <span class="timeline-date">2024 - 2026</span>
                 <h4>Personal Projects</h4>
                 <p class="timeline-place">GitHub</p>
                 <p>
@@ -202,7 +206,7 @@
 
               <div class="timeline-item">
                 <span class="timeline-date">2023 - 2027</span>
-                <h4>Your Degree or Field of Study</h4>
+                <h4>software engi</h4>
                 <p class="timeline-place">Arbaminch University</p>
                 <p>
                   Studying core subjects and growing my skills in
@@ -304,6 +308,9 @@
           </article>
 
           <article class="project-card">
+            <div class="project-thumb">
+  <img src="images/project1.jpg" alt="Screenshot of the Portfolio Website" class="project-img" width="800" height="450" loading="lazy" decoding="async">
+</div>
             <div class="project-thumb thumb-2">
               <span class="project-emoji">🍽️</span>
             </div>
@@ -399,7 +406,7 @@
       <div class="container">
         <h2 class="section-title">What People Say</h2>
 
-        <!-- IMPORTANT: replace these with real feedback from real people (with their permission). -->
+        <!-- IMPORTANT: replace these with real feedback from real people (with their permission), or delete this section. -->
         <div class="testimonials-grid">
 
           <figure class="testimonial-card">
@@ -537,7 +544,7 @@
             <summary>How can I contact you?</summary>
             <p class="faq-answer">
               Use the contact form below or send an email to
-              you@example.com. I usually reply within 24 hours.
+              redeitsolomon983@gmail.com. I usually reply within 24 hours.
             </p>
           </details>
 
@@ -560,7 +567,7 @@
             </p>
 
             <ul class="contact-details">
-              <li><span class="contact-icon">📧</span>redeitsolomon983@gmail.com</li>
+              <li><span class="contact-icon">📧</span> redeitsolomon983@gmail.com</li>
               <li><span class="contact-icon">📍</span> Ethiopia</li>
               <li><span class="contact-icon">🕒</span> Replies within 24 hours</li>
             </ul>
@@ -569,19 +576,19 @@
               <a href="https://github.com/Rad8" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">GH</a>
               <a href="https://linkedin.com/in/Rad8" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">in</a>
               <a href="https://twitter.com/Rad8" target="_blank" rel="noopener" class="social-link" aria-label="Twitter">X</a>
-              <a href="mailto:you@example.com" class="social-link" aria-label="Email">@</a>
+              <a href="mailto:redeitsolomon983@gmail.com" class="social-link" aria-label="Email">@</a>
             </div>
           </div>
 
           <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
             <div class="form-group">
               <label for="name">Redeit Solomon</label>
-              <input type="text" id="name" name="name" placeholder="John Doe" required>
+              <input type="text" id="name" name="name" placeholder="John Doe" autocomplete="name" required>
             </div>
 
             <div class="form-group">
-              <label for="email">redeitsolomon983@gmail.com</label>
-              <input type="email" id="email" name="email" placeholder="john@example.com" required>
+              <label for="email">Your Email</label>
+              <input type="email" id="email" name="email" placeholder="redeitsolomon983@gmail.com" autocomplete="email" required>
             </div>
 
             <div class="form-group">
@@ -604,7 +611,7 @@
   </main>
 
   <footer class="footer">
-    <p>&copy; 2026 Redeit Solomon. All rights reserved.</p>
+    <p>&copy; 2026 Redeit. All rights reserved.</p>
   </footer>
 
   <!-- Back to top button -->
