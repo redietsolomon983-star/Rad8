@@ -174,8 +174,8 @@ a:focus-visible {
 }
 
 .logo {
-  font-size: 1.4rem;
-  font-weight: 700;
+  font-size: 1.2rem;
+  font-weight: 500;
   color: var(--accent);
 }
 
@@ -1308,7 +1308,12 @@ a:focus-visible {
     background: #ffffff;
     color: #000000;
   }
-
+.hero {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/profile2.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
   .section {
     padding: 1.5rem 0;
   }
