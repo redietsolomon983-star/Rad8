@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Building a Dark Mode with Only CSS | Your Name</title>
+  <meta name="description" content="How a hidden checkbox and a few color variables can switch a whole website between light and dark.">
+  <meta name="theme-color" content="#7c3aed">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body id="top">
+
+  <input type="checkbox" id="theme-toggle" class="theme-toggle" aria-label="Switch between light and dark mode">
+  <label for="theme-toggle" class="theme-btn" title="Switch light / dark mode"></label>
+
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="header">
+    <nav class="nav" aria-label="Main navigation">
+      <a href="../index.html" class="logo">YourName</a>
+
+      <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">
+      <label for="menu-toggle" class="menu-btn"><span></span><span></span><span></span></label>
+
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../index.html#notes">Notes</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="page-main">
+
+    <header class="article-header">
+      <a href="../index.html#notes" class="back-link">← Back to notes</a>
+      <div class="note-meta">
+        <span class="note-tag">CSS</span>
+        <time datetime="2026-11-01">Nov 1, 2026</time>
+        <span>3 min read</span>
+      </div>
+      <h1>Building a Dark Mode with Only CSS</h1>
+      <p class="article-lead">
+        A hidden checkbox and a few color variables are enough to switch
+        a whole website between light and dark. No JavaScript needed.
+      </p>
+    </header>
+
+    <article class="article">
+
+      <h2>The idea</h2>
+      <p>
+        A checkbox remembers one thing: on or off. CSS can read that state
+        with the <code>:checked</code> selector. So the plan is simple:
+        put a hidden checkbox at the top of the page, let a label act as the
+        visible button, and change the colors when the box is checked.
+      </p>
+
+      <h2>Step 1: Use color variables</h2>
+      <p>
+        Instead of typing colors everywhere, store them once in
+        <code>:root</code> and use <code>var(--name)</code> in the rest of the CSS.
+      </p>
+      <pre><code>:root {
+  --bg: #ede9fe;
+  --text: #2e1065;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+}</code></pre>
+
+      <h2>Step 2: Add the checkbox and the label</h2>
+      <pre><code>&lt;input type="checkbox" id="theme-toggle" class="theme-toggle"&gt;
+&lt;label for="theme-toggle" class="theme-btn"&gt;&lt;/label&gt;</code></pre>
+      <p>
+        Clicking a label toggles the checkbox it points to with its
+        <code>for</code> attribute. The checkbox itself is hidden with CSS,
+        and the label is styled as a round button.
+      </p>
+
+      <h2>Step 3: Swap the variables</h2>
+      <p>
+        The <code>:has()</code> selector lets the root element react to its
+        own children. When the checkbox is checked, new values replace the old ones:
+      </p>
+      <pre><code>:root:has(#theme-toggle:checked) {
+  --bg: #1b1735;
+  --text: #ede9fe;
+}</code></pre>
+      <p>
+        Everything that uses <code>var(--bg)</code> or <code>var(--text)</code>
+        changes automatically. Adding a <code>transition</code> makes the change smooth.
+      </p>
+
+      <h2>Limits to know about</h2>
+      <ul>
+        <li>The choice is not saved. Refreshing the page goes back to light mode.</li>
+        <li><code>:has()</code> needs a modern browser (Chrome and Edge 105+, Safari 15.4+, Firefox 121+).</li>
+        <li>The checkbox must stay in the page, because the selector looks for it by its id.</li>
+      </ul>
+
+      <p>
+        Try the 🌙 button in the corner of this page. It uses exactly this method.
+      </p>
+
+      <nav class="article-nav" aria-label="Notes navigation">
+        <span></span>
+        <a href="daily-commits.html" class="link-btn link-outline">Next note →</a>
+      </nav>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 Your Name. All rights reserved.</p>
+  </footer>
+
+  <a href="#top" class="back-to-top" aria-label="Back to top">↑</a>
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What I Learned from Committing Every Day | Your Name</title>
+  <meta name="description" content="Small daily commits made my project easier to track and my progress easier to see.">
+  <meta name="theme-color" content="#7c3aed">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body id="top">
+
+  <input type="checkbox" id="theme-toggle" class="theme-toggle" aria-label="Switch between light and dark mode">
+  <label for="theme-toggle" class="theme-btn" title="Switch light / dark mode"></label>
+
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="header">
+    <nav class="nav" aria-label="Main navigation">
+      <a href="../index.html" class="logo">YourName</a>
+
+      <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">
+      <label for="menu-toggle" class="menu-btn"><span></span><span></span><span></span></label>
+
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../index.html#notes">Notes</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="page-main">
+
+    <header class="article-header">
+      <a href="../index.html#notes" class="back-link">← Back to notes</a>
+      <div class="note-meta">
+        <span class="note-tag">Git</span>
+        <time datetime="2026-10-28">Oct 28, 2026</time>
+        <span>3 min read</span>
+      </div>
+      <h1>What I Learned from Committing Every Day</h1>
+      <p class="article-lead">
+        I built this portfolio one day at a time, with a commit after each
+        step. Here is what that habit taught me.
+      </p>
+    </header>
+
+    <article class="article">
+
+      <h2>1. Small steps are easier to finish</h2>
+      <p>
+        "Build a portfolio" is a big and vague task. "Add the About section"
+        is small and clear. Splitting the work into daily pieces meant I always
+        knew what to do next, and I never felt stuck for long.
+      </p>
+
+      <h2>2. A history you can read</h2>
+      <p>
+        Looking at the commit list on GitHub shows the whole story of the
+        project. Clear messages make it even better:
+      </p>
+      <pre><code>git commit -m "Day 2: Add About and Skills sections"
+git commit -m "Day 7: Add pure CSS dark mode"</code></pre>
+      <p>
+        When something breaks, I can see exactly which day introduced the change.
+      </p>
+
+      <h2>3. Mistakes become cheap</h2>
+      <p>
+        If a change goes wrong, going back to yesterday's version is easy
+        because yesterday was saved. That makes it safe to experiment with new
+        ideas, like animations or a dark mode.
+      </p>
+
+      <h2>4. It shows consistency</h2>
+      <p>
+        Employers who open a GitHub profile can see steady activity.
+        Regular, honest progress says more than one huge upload.
+      </p>
+
+      <h2>Tips that helped me</h2>
+      <ul>
+        <li>Commit when something works, not only when you are done for the day.</li>
+        <li>Write the message as if explaining it to a teammate.</li>
+        <li>Run <code>git status</code> before committing to see what is included.</li>
+        <li>Push regularly so your work is also safe online.</li>
+      </ul>
+
+      <nav class="article-nav" aria-label="Notes navigation">
+        <a href="dark-mode-css.html" class="link-btn link-outline">← Previous note</a>
+        <a href="color-palette.html" class="link-btn link-outline">Next note →</a>
+      </nav>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 Your Name. All rights reserved.</p>
+  </footer>
+
+  <a href="#top" class="back-to-top" aria-label="Back to top">↑</a>
+
+</body>
+</html>

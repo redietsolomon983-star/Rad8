@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Website, Project Details | Your Name</title>
+  <meta name="description" content="How I built a responsive portfolio website with pure HTML and CSS, with dark mode, animations, and no JavaScript.">
+  <meta name="theme-color" content="#7c3aed">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body id="top">
+
+  <input type="checkbox" id="theme-toggle" class="theme-toggle" aria-label="Switch between light and dark mode">
+  <label for="theme-toggle" class="theme-btn" title="Switch light / dark mode"></label>
+
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="header">
+    <nav class="nav" aria-label="Main navigation">
+      <a href="../index.html" class="logo">YourName</a>
+
+      <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">
+      <label for="menu-toggle" class="menu-btn"><span></span><span></span><span></span></label>
+
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../index.html#notes">Notes</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="page-main">
+
+    <header class="article-header">
+      <a href="../index.html#projects" class="back-link">← Back to projects</a>
+      <h1>Portfolio Website</h1>
+      <p class="article-lead">
+        A responsive personal website built from scratch with pure HTML and CSS,
+        created one day at a time with a Git commit after each step.
+      </p>
+    </header>
+
+    <article class="article article-wide">
+
+      <div class="project-banner" role="img" aria-label="Project banner">🌐</div>
+
+      <div class="facts-grid">
+        <div class="fact-card"><strong>Role</strong><span>Design and development</span></div>
+        <div class="fact-card"><strong>Time</strong><span>11 days</span></div>
+        <div class="fact-card"><strong>Stack</strong><span>HTML, CSS, Git, GitHub Pages</span></div>
+        <div class="fact-card"><strong>JavaScript</strong><span>None</span></div>
+      </div>
+
+      <div class="project-links project-links-center">
+        <a href="https://YOUR-USERNAME.github.io/portfolio/" class="link-btn" target="_blank" rel="noopener">Live Demo</a>
+        <a href="https://github.com/YOUR-USERNAME/portfolio" class="link-btn link-outline" target="_blank" rel="noopener">View Code</a>
+      </div>
+
+      <h2>The goal</h2>
+      <p>
+        I wanted a professional place to show my skills and projects, and I wanted
+        to prove to myself that HTML and CSS alone can do much more than people expect.
+      </p>
+
+      <h2>What I built</h2>
+      <ul>
+        <li>A responsive layout that works on phones, tablets, and computers.</li>
+        <li>A dark mode toggle using a hidden checkbox and CSS variables.</li>
+        <li>A mobile hamburger menu with no JavaScript.</li>
+        <li>Scroll animations using CSS <code>animation-timeline</code>.</li>
+        <li>An FAQ accordion using the built-in <code>details</code> element.</li>
+        <li>A contact form connected to Formspree.</li>
+        <li>Accessibility features: skip link, keyboard focus styles, and reduced motion support.</li>
+      </ul>
+
+      <h2>Challenges</h2>
+      <ul>
+        <li><strong>No saved theme.</strong> Pure CSS cannot remember the dark mode choice after a refresh. I accepted this limit to keep the site JavaScript free.</li>
+        <li><strong>Color contrast.</strong> White text on the lighter dark mode purple failed the contrast check, so I separated the button color into its own variable.</li>
+        <li><strong>Browser support.</strong> Some modern selectors work only in newer browsers, so I wrote the CSS so that the site still looks fine when they are missing.</li>
+      </ul>
+
+      <h2>What I learned</h2>
+      <ul>
+        <li>How to structure CSS with variables so one change updates the whole site.</li>
+        <li>How Flexbox and Grid make responsive layouts simple.</li>
+        <li>How to write clear commits and publish with GitHub Pages.</li>
+        <li>That accessibility is easier when you think about it from the start.</li>
+      </ul>
+
+      <h2>What I would improve next</h2>
+      <ul>
+        <li>Add real screenshots of my projects.</li>
+        <li>Write more notes and add them to the Latest Notes section.</li>
+        <li>Add a language option for Amharic and English.</li>
+      </ul>
+
+      <nav class="article-nav" aria-label="Project navigation">
+        <a href="../index.html#projects" class="link-btn link-outline">← All projects</a>
+        <a href="../index.html#contact" class="link-btn">Work with me</a>
+      </nav>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 Your Name. All rights reserved.</p>
+  </footer>
+
+  <a href="#top" class="back-to-top" aria-label="Back to top">↑</a>
+
+</body>
+</html>

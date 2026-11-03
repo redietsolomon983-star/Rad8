@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Choosing a Color Palette for a Portfolio | Your Name</title>
+  <meta name="description" content="Why I picked purple, and how to keep text readable in both light and dark themes.">
+  <meta name="theme-color" content="#7c3aed">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body id="top">
+
+  <input type="checkbox" id="theme-toggle" class="theme-toggle" aria-label="Switch between light and dark mode">
+  <label for="theme-toggle" class="theme-btn" title="Switch light / dark mode"></label>
+
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="header">
+    <nav class="nav" aria-label="Main navigation">
+      <a href="../index.html" class="logo">YourName</a>
+
+      <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">
+      <label for="menu-toggle" class="menu-btn"><span></span><span></span><span></span></label>
+
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../index.html#notes">Notes</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="page-main">
+
+    <header class="article-header">
+      <a href="../index.html#notes" class="back-link">← Back to notes</a>
+      <div class="note-meta">
+        <span class="note-tag">Design</span>
+        <time datetime="2026-10-20">Oct 20, 2026</time>
+        <span>4 min read</span>
+      </div>
+      <h1>Choosing a Color Palette for a Portfolio</h1>
+      <p class="article-lead">
+        Why I picked purple, and how to keep text readable in both
+        light and dark themes.
+      </p>
+    </header>
+
+    <article class="article">
+
+      <h2>Start with one main color</h2>
+      <p>
+        A portfolio feels calm and professional when it has one clear
+        accent color. I chose purple because it feels creative without being
+        loud. Everything else is a lighter or darker version of it.
+      </p>
+
+      <h2>My palette</h2>
+      <div class="swatches">
+        <div class="swatch" style="background:#ede9fe; color:#2e1065;">#ede9fe<br><small>Background</small></div>
+        <div class="swatch" style="background:#c4b5fd; color:#2e1065;">#c4b5fd<br><small>Soft accent</small></div>
+        <div class="swatch" style="background:#7c3aed; color:#ffffff;">#7c3aed<br><small>Main accent</small></div>
+        <div class="swatch" style="background:#2e1065; color:#ffffff;">#2e1065<br><small>Text</small></div>
+      </div>
+
+      <h2>Contrast matters more than beauty</h2>
+      <p>
+        Text must be easy to read for everyone, including people with weak
+        eyesight or a phone in bright sunlight. A common rule is a contrast ratio
+        of at least <strong>4.5 to 1</strong> for normal text. Free tools such as the
+        WebAIM Contrast Checker will measure it for you.
+      </p>
+      <p>
+        On Day 10 I found that white text on the lighter dark mode purple was too
+        weak, so buttons keep the darker purple in both themes.
+      </p>
+
+      <h2>Use variables for every color</h2>
+      <p>
+        Because all colors are stored as CSS variables, changing the whole look of
+        the site takes a few lines:
+      </p>
+      <pre><code>:root {
+  --accent: #7c3aed;
+}</code></pre>
+      <p>
+        Want a green or blue site? Change that value and the rest follows.
+      </p>
+
+      <h2>Quick rules I follow</h2>
+      <ul>
+        <li>One main color, one soft version, and neutral text colors.</li>
+        <li>Never use color alone to show meaning (add text or an icon too).</li>
+        <li>Check both light and dark themes before publishing.</li>
+        <li>Test on a real phone, not only on a computer screen.</li>
+      </ul>
+
+      <nav class="article-nav" aria-label="Notes navigation">
+        <a href="daily-commits.html" class="link-btn link-outline">← Previous note</a>
+        <span></span>
+      </nav>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 Your Name. All rights reserved.</p>
+  </footer>
+
+  <a href="#top" class="back-to-top" aria-label="Back to top">↑</a>
+
+</body>
+</html>
