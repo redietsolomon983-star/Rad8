@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tools I Use | Redeit</title>
+  <meta name="description" content="The tools, apps, and learning resources I use to build websites.">
+  <meta name="theme-color" content="#7c3aed">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Small styles used only on this page -->
+  <style>
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem 4rem;
+    }
+
+    .tools-group-title {
+      max-width: 1100px;
+      margin: 2rem auto 1.2rem;
+      padding: 0 1.5rem;
+      color: var(--accent);
+      font-size: 1.5rem;
+    }
+
+    .tool-card {
+      background-color: var(--bg-light);
+      border-top: 4px solid var(--accent);
+      border-radius: 14px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 16px rgba(124, 58, 237, 0.12);
+      transition: transform 0.3s, box-shadow 0.3s, background-color 0.4s;
+    }
+
+    .tool-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 18px 36px rgba(124, 58, 237, 0.28);
+    }
+
+    .tool-icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .tool-card h3 {
+      font-size: 1.15rem;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+
+    .tool-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .tool-card a {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    @media (max-width: 900px) {
+      .tools-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .tools-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body id="top">
+
+  <input type="checkbox" id="theme-toggle" class="theme-toggle" aria-label="Switch between light and dark mode">
+  <label for="theme-toggle" class="theme-btn" title="Switch light / dark mode"></label>
+
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="header">
+    <nav class="nav" aria-label="Main navigation">
+      <a href="index.html" class="logo">Redeit</a>
+
+      <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">
+      <label for="menu-toggle" class="menu-btn"><span></span><span></span><span></span></label>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#notes">Notes</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="page-main">
+
+    <header class="article-header">
+      <a href="index.html" class="back-link">← Back to home</a>
+      <h1>Tools I Use</h1>
+      <p class="article-lead">
+        The apps and resources I use to learn, build, and publish websites.
+        Most of them are free.
+      </p>
+    </header>
+
+    <h2 class="tools-group-title">💻 Building</h2>
+    <div class="tools-grid">
+
+      <article class="tool-card">
+        <div class="tool-icon">📝</div>
+        <h3>Visual Studio Code</h3>
+        <p>My code editor. I use it to write HTML and CSS and to run Git commands.</p>
+        <a href="https://code.visualstudio.com" target="_blank" rel="noopener">Visit website →</a>
+      </article>
+
+      <article class="tool-card">
+        <div class="tool-icon">🌐</div>
+        <h3>Google Chrome DevTools</h3>
+        <p>Press F12 to inspect any element, test colors, and check the mobile layout.</p>
+        <a href="https://developer.chrome.com/docs/devtools" target="_blank" rel="noopener">Visit website →</a>
+      </article>
+
+      <article class="tool-card">
+        <div class="tool-icon">🔀</div>
+        <h3>Git and GitHub</h3>
+        <p>Saves every step of my work and publishes this site with GitHub Pages.</p>
+        <a href="https://github.com" target="_blank" rel="noopener">Visit website →</a>
+      </article>
+
+    </div>
+
+    <h2 class="tools-group-title">🎨 Design and quality</h2>
+    <div class="tools-grid">
+
+      <article class="tool-card">
+        <div class="tool-icon">🗜️</div>
+        <h3>Squoosh</h3>
+        <p>Makes images smaller so pages load fast.</p>
+        <a href="https://squoosh.app" target="_blank" rel="noopener">Visit website →</a>
+      </article>
+
+      <article class="tool-card">
+        <div class="tool-icon">🔍</div>
+        <h3>WebAIM Contrast Checker</h3>
+        <p>Checks that text colors are easy to read for everyone.</p>
+        <a href="https://webaim.org/resources/contrastchecker/" target="_blank" rel="noopener">Visit website →</a>
+      </article>
+
+      <article class="tool-card">
+        <div class="tool-icon">📈</div>
+        <h3>Lighthouse</h3>
+        <p>Built into Chrome. Scores speed, accessibility, and SEO.</p>
+        <a href="https://developer.chrome.com/docs/lighthouse" target="_blank" rel="noopener">Visit website →</a>
+      </article>
+
+    </div>
+
+    <h2 class="tools-group-title">📚 Learning</h2>
+    <div class="tools-grid">
+
+      <article class="tool-card">
+        <div class="tool-icon">🎓</div>
+        <h3>freeCodeCamp</h3>
+        <p>Free step by step courses in HTML, CSS, and more.</p>
+        <a href="https://www.freecodecamp.org" target="_blank" rel="noopener">Visit website →</a>
+      </article>
+
+      <article class="tool-card">
+        <div class="tool-icon">📖</div>
+        <h3>MDN Web Docs</h3>
+        <p>The best reference for every HTML and CSS feature.</p>
+        <a href="https://developer.mozilla.org" target="_blank" rel="noopener">Visit website →</a>
+      </article>
+
+      <article class="tool-card">
+        <div class="tool-icon">🧩</div>
+        <h3>CSS-Tricks</h3>
+        <p>Guides for Flexbox, Grid, and animations.</p>
+        <a href="https://css-tricks.com" target="_blank" rel="noopener">Visit website →</a>
+      </article>
+
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <p>
+  &copy; 2026 Your Name. All rights reserved. ·
+  <a href="uses.html" style="color: var(--accent); font-weight: 600;">Tools I use</a>
+</p>
+  </footer>
+
+  <a href="#top" class="back-to-top" aria-label="Back to top">↑</a>
+
+</body>
+</html>
