@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Daily Page | Blog Layout</title>
+  <meta name="description" content="The Daily Page, a sample blog layout built with HTML and CSS.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #f4f6fb;
+      --card: #ffffff;
+      --text: #1e2a44;
+      --muted: #5d6b88;
+      --blue: #3b5bdb;
+      --blue-dark: #2f49b3;
+      --soft: #e3e9ff;
+    }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+
+    /* ===== Header ===== */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: var(--card);
+      box-shadow: 0 2px 10px rgba(30, 42, 68, 0.1);
+    }
+
+    .nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .logo { font-size: 1.5rem; font-weight: 700; color: var(--blue); }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    .nav-links a { color: var(--muted); transition: color 0.3s; }
+    .nav-links a:hover { color: var(--blue); }
+
+    /* ===== Page title ===== */
+    .page-head {
+      text-align: center;
+      padding: 3.5rem 1.5rem 2rem;
+    }
+
+    .page-head h1 { font-size: clamp(2rem, 6vw, 3rem); }
+
+    .page-head p {
+      color: var(--muted);
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    /* ===== Layout: articles + sidebar ===== */
+    .layout {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem 4rem;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    /* ===== Featured article ===== */
+    .featured {
+      background: var(--card);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(30, 42, 68, 0.1);
+      margin-bottom: 2rem;
+    }
+
+    .featured-img {
+      height: 240px;
+      background: linear-gradient(135deg, #3b5bdb, #91a7ff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 4.5rem;
+    }
+
+    .featured-body { padding: 1.8rem; }
+
+    .featured-body h2 { font-size: 1.8rem; margin: 0.5rem 0; }
+
+    .featured-body p { color: var(--muted); margin-bottom: 1rem; }
+
+    /* ===== Small pieces used in cards ===== */
+    .tag {
+      display: inline-block;
+      background: var(--soft);
+      color: var(--blue);
+      font-family: "Segoe UI", Arial, sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 0.15rem 0.8rem;
+      border-radius: 999px;
+    }
+
+    .meta {
+      font-family: "Segoe UI", Arial, sans-serif;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .read-more {
+      color: var(--blue);
+      font-family: "Segoe UI", Arial, sans-serif;
+      font-weight: 600;
+      transition: letter-spacing 0.25s;
+    }
+
+    .read-more:hover { letter-spacing: 0.04em; }
+
+    /* ===== Article cards ===== */
+    .posts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .post {
+      background: var(--card);
+      border-radius: 14px;
+      padding: 1.5rem;
+      border-top: 4px solid var(--blue);
+      box-shadow: 0 4px 16px rgba(30, 42, 68, 0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .post:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 30px rgba(30, 42, 68, 0.18);
+    }
+
+    .post h3 { font-size: 1.2rem; margin: 0.7rem 0 0.4rem; }
+
+    .post p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 0.8rem;
+    }
+
+    /* ===== Sidebar ===== */
+    .sidebar { display: grid; gap: 1.5rem; }
+
+    .widget {
+      background: var(--card);
+      border-radius: 14px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 16px rgba(30, 42, 68, 0.08);
+    }
+
+    .widget h3 {
+      font-size: 1.1rem;
+      color: var(--blue);
+      margin-bottom: 0.8rem;
+    }
+
+    .widget p { color: var(--muted); font-size: 0.95rem; }
+
+    .widget li {
+      font-family: "Segoe UI", Arial, sans-serif;
+      padding: 0.45rem 0;
+      border-bottom: 1px solid var(--soft);
+    }
+
+    .widget li:last-child { border-bottom: none; }
+
+    .widget li a { transition: color 0.25s; }
+    .widget li a:hover { color: var(--blue); }
+
+    /* ===== Footer ===== */
+    .footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: var(--text);
+      color: var(--soft);
+      font-family: "Segoe UI", Arial, sans-serif;
+      font-size: 0.95rem;
+    }
+
+    .footer a { color: #ffffff; font-weight: 600; }
+
+    /* ===== Phones and tablets ===== */
+    @media (max-width: 900px) {
+      .layout { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .nav { flex-direction: column; }
+      .nav-links { gap: 1rem; }
+      .posts { grid-template-columns: 1fr; }
+      .featured-img { height: 180px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <nav class="nav">
+      <a href="#top" class="logo">The Daily Page</a>
+      <ul class="nav-links">
+        <li><a href="#latest">Latest</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#categories">Categories</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <section class="page-head">
+      <h1>The Daily Page</h1>
+      <p>Short stories and simple ideas for curious readers</p>
+    </section>
+
+    <div class="layout">
+
+      <!-- ===== Articles ===== -->
+      <div id="latest">
+
+        <article class="featured">
+          <div class="featured-img">📖</div>
+          <div class="featured-body">
+            <span class="tag">Featured</span>
+            <h2>Why Reading Ten Minutes a Day Changes Everything</h2>
+            <p class="meta">Nov 4, 2026 · 5 min read</p>
+            <p>
+              A small daily habit can add up to dozens of books a year.
+              Here is how to start, even if you think you have no time.
+            </p>
+            <a href="#" class="read-more">Read the article →</a>
+          </div>
+        </article>
+
+        <div class="posts">
+
+          <article class="post">
+            <span class="tag">Learning</span>
+            <h3>How to Learn Anything Faster</h3>
+            <p class="meta">Nov 2, 2026 · 4 min read</p>
+            <p>Practice a little every day and teach what you learn to someone else.</p>
+            <a href="#" class="read-more">Read more →</a>
+          </article>
+
+          <article class="post">
+            <span class="tag">Lifestyle</span>
+            <h3>A Simple Morning Routine</h3>
+            <p class="meta">Oct 30, 2026 · 3 min read</p>
+            <p>Three small steps that make the rest of your day calmer.</p>
+            <a href="#" class="read-more">Read more →</a>
+          </article>
+
+          <article class="post">
+            <span class="tag">Tech</span>
+            <h3>Five Free Tools for Students</h3>
+            <p class="meta">Oct 26, 2026 · 4 min read</p>
+            <p>Useful apps that cost nothing and save hours of work.</p>
+            <a href="#" class="read-more">Read more →</a>
+          </article>
+
+          <article class="post">
+            <span class="tag">Writing</span>
+            <h3>Writing Clearly in Plain Words</h3>
+            <p class="meta">Oct 21, 2026 · 3 min read</p>
+            <p>Short sentences and simple words help readers understand you.</p>
+            <a href="#" class="read-more">Read more →</a>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- ===== Sidebar ===== -->
+      <aside class="sidebar">
+
+        <section class="widget" id="about">
+          <h3>About this blog</h3>
+          <p>
+            The Daily Page is a sample blog layout. It shows how to
+            build article cards and a sidebar with only HTML and CSS.
+          </p>
+        </section>
+
+        <section class="widget" id="categories">
+          <h3>Categories</h3>
+          <ul>
+            <li><a href="#">Learning</a></li>
+            <li><a href="#">Lifestyle</a></li>
+            <li><a href="#">Tech</a></li>
+            <li><a href="#">Writing</a></li>
+          </ul>
+        </section>
+
+        <section class="widget">
+          <h3>Popular posts</h3>
+          <ul>
+            <li><a href="#">How to Learn Anything Faster</a></li>
+            <li><a href="#">Five Free Tools for Students</a></li>
+            <li><a href="#">A Simple Morning Routine</a></li>
+          </ul>
+        </section>
+
+      </aside>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>
+      &copy; 2026 The Daily Page. A sample project ·
+      <a href="index.html">← Back to portfolio</a>
+    </p>
+  </footer>
+
+</body>
+</html>
