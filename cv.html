@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV |Redeit Solomon</title>
+  <meta name="description" content="Redeit Solomon, web developer.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #ede9fe;
+      --paper: #ffffff;
+      --text: #2e1065;
+      --muted: #5b4b8a;
+      --accent: #7c3aed;
+      --soft: #ede9fe;
+    }
+
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    ul { list-style: none; }
+
+    /* ===== Top bar (not printed) ===== */
+    .topbar {
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 1.2rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #ffffff;
+      border: none;
+      padding: 0.6rem 1.4rem;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .btn:hover { background: #6d28d9; transform: translateY(-2px); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--accent);
+      border: 2px solid var(--accent);
+    }
+
+    .btn-outline:hover { background: var(--accent); color: #ffffff; }
+
+    /* ===== The paper ===== */
+    .paper {
+      max-width: 850px;
+      margin: 0 auto 3rem;
+      background: var(--paper);
+      padding: 3rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(124, 58, 237, 0.2);
+    }
+
+    .cv-head {
+      border-bottom: 3px solid var(--accent);
+      padding-bottom: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .cv-head h1 { font-size: 2.2rem; }
+
+    .cv-role { color: var(--accent); font-size: 1.2rem; font-weight: 600; }
+
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem 1.5rem;
+      margin-top: 0.8rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    section { margin-bottom: 1.8rem; }
+
+    h2 {
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      border-bottom: 1px solid var(--soft);
+      padding-bottom: 0.3rem;
+      margin-bottom: 0.8rem;
+    }
+
+    p { color: var(--muted); }
+
+    .item { margin-bottom: 1rem; }
+
+    .item-top {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+    }
+
+    .item h3 { font-size: 1.05rem; }
+
+    .date {
+      color: var(--accent);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .place { color: var(--muted); font-size: 0.95rem; font-style: italic; }
+
+    .item ul { list-style: disc; margin: 0.4rem 0 0 1.3rem; color: var(--muted); }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .skills li {
+      background: var(--soft);
+      color: var(--text);
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 0.2rem 0.9rem;
+      border-radius: 999px;
+    }
+
+    @media (max-width: 600px) {
+      .paper { padding: 1.5rem; border-radius: 0; }
+      .cv-head h1 { font-size: 1.8rem; }
+    }
+
+    /* ===== Printing / Save as PDF ===== */
+    @media print {
+      body { background: #ffffff; }
+      .topbar { display: none; }
+      .paper { box-shadow: none; padding: 0; margin: 0; max-width: 100%; }
+      .item { break-inside: avoid; }
+      a { color: #000000; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <a href="index.html" class="btn btn-outline">← Back to portfolio</a>
+    <button class="btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
+  </div>
+
+  <main class="paper">
+
+    <header class="cv-head">
+      <h1>Redeit Solomon</h1>
+      <p class="cv-role">Web Developer</p>
+      <div class="contact">
+        <span>📧 redeitsolomon@gmail.com</span>
+        <span>📍 Ethiopia</span>
+        <span>🌐 <a href="https://Rad8.github.io/portfolio/">Rad8.github.io/portfolio</a></span>
+        <span>💻 <a href="https://github.com/Rad8">github.com/Rad8</a></span>
+      </div>
+    </header>
+
+    <section>
+      <h2>Profile</h2>
+      <p>
+        Motivated web developer who builds clean, responsive websites with
+        HTML and CSS. I learn quickly, enjoy solving problems, and publish
+        my work on GitHub every day.
+      </p>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+
+      <div class="item">
+        <div class="item-top">
+          <h3>Portfolio Website</h3>
+          <span class="date">2026</span>
+        </div>
+        <ul>
+          <li>Built a responsive site with pure HTML and CSS, including dark mode and animations.</li>
+          <li>Published with GitHub Pages and a Git commit after each step.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-top">
+          <h3>Restaurant Landing Page</h3>
+          <span class="date">2026</span>
+        </div>
+        <ul>
+          <li>Designed a one page site with a menu, opening hours, and a booking button.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-top">
+          <h3>Blog Layout</h3>
+          <span class="date">2026</span>
+        </div>
+        <ul>
+          <li>Created article cards and a sidebar that adapts to phones and tablets.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <div class="item">
+        <div class="item-top">
+          <h3> software engeenering</h3>
+          <span class="date">2024 - 2027</span>
+        </div>
+        <p class="place">Arbaminch Universtiy</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <ul class="skills">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Responsive Design</li>
+        <li>Flexbox and Grid</li>
+        <li>Git and GitHub</li>
+        <li>CSS Animations</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Languages</h2>
+      <p>Amharic (native) · English (add your level)</p>
+    </section>
+
+  </main>
+
+</body>
+</html>
