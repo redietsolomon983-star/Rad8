@@ -1323,3 +1323,7 @@ a:focus-visible {
     break-inside: avoid;
   }
 }
+/* Day 19: show the top part of project screenshots */
+.project-img {
+  object-position: top;
+}
